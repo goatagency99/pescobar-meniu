@@ -47,18 +47,18 @@ footer{text-align:center;color:var(--muted);font-size:.68rem;letter-spacing:.14e
 var P="porție",K="kg";
 var D=[
 ["Antreu",[["Lacherdă de pălămidă",25,P]]],
-["Aperitive",[["Icre",35,P]]],
+["Aperitive",[["Icre de crap",35,P]]],
 ["Frigărui la grătar",[["Frigăruie Amberjack (Ricciola)",75,P],["Frigăruie Creveți Sălbatici",60,P],["Frigăruie Grouper",75,P],["Frigăruie pălămidă",35,P],["Frigăruie Monkfish",69,P]]],
 ["Garnituri",[["Cartofi prăjiți",17,P],["Mămăligă",13,P],["Mix de salată",20,P],["Orez cu legume",23,P],["Orez simplu",19,P],["Pită",15,P]]],
 ["Specialități",[["Calamar Feta la grătar",75,P],["Calamar la grătar",65,P]]],
 ["Gătite cu talent",[["Creveți în sos de vin și usturoi",75,P],["Tigaie cu creveți și caracatiță",103,P],["Tigaie picantă",67,P],["Tigaie picantă cu creveți",75,P],["Tigaie picantă cu fructe de mare",77,P],["Tocăniță de Rapane cu sos roșu picant",68,P],["Tocăniță de Rapane unt și usturoi",68,P]]],
 ["Grătar",[["Amberjack la grătar",75,P],["Caracatiță la grătar",126,P],["Chefal la grătar",39,P],["Crap la grătar",99,P],["Creveți sălbatici la grătar",85,P],["Doradă la grătar",45,P],["Grouper la grătar",90,P],["John Dory la grătar",120,P],["Lup de mare la grătar",45,P],["Macrou la grătar",20,P],["Pește-spadă la grătar",55,P],["Rândunică de mare la grătar",75,P],["Sole la grătar",90,P],["Ton la grătar",55,P]]],
+["Pește la sare",[["Doradă la sare",75,P],["Lup de mare la sare",75,P],["Doradă sălbatică",20,"100g"]]],
 ["Prăjit (Tava)",[["Barbun",35,P],["Hamsie",25,P],["Macrou",35,P],["Merluciu",35,P],["Pălămidă",35,P],["Sardine",30,P],["Stavrid",30,P]]],
 ["Meniul zilei",[["Meniul zilei (storceag de sturion + doradă/lup de mare prăjit + mămăliguță și mujdei)",50,P]]],
 ["Seafood Snacks (Prăjit)",[["Caras prăjit la porție",15,P],["Creveți pane",73,P],["Calamar pane pe pat de cartofi",71,P],["Creveți Crispy Panko pe pat de cartofi",75,P],["Fish & Chips",75,P],["Fritto misto",73,P]]],
 ["Sosuri",[["Mujdei de usturoi",11,P],["Sos aioli",11,P],["Sos picant Sriracha",11,P],["Sos special by Pescobar",11,P],["Sos Spicy Mayo",11,P],["Sos sweet chilli",11,P]]],
-["Spaghete",[["Spaghete telline",67,P],["Spaghete vongole veraci",67,P],["Spaghetti cu caracatiță",74,P],["Spaghetti cu creveți",74,P],["Spaghetti cu fructe de mare",76,P],["Spaghetti cu homar",120,P]]],
-["Steak de Pește",[["Steak de doradă la grătar - 200 g",55,P]]],
+["Spaghete",[["Spaghetti cu caracatiță",74,P],["Spaghetti cu creveți",74,P],["Spaghetti cu fructe de mare",76,P],["Spaghetti cu homar",120,P]]],
 ["Stridii",[["Stridie",25,"bucată"],["Stridii Regale - 12 buc",260,P],["Stridii Regale - 6 buc",130,P]]],
 ["Supe",[["Storceag de sturion",25,P]]],
 ["Tocănițe",[["Tocană ghiveci de pălămidă",45,P]]],
@@ -70,7 +70,7 @@ var D=[
 ["Limonade și Fresh-uri",[["Limonadă clasică",25,P],["Limonadă cu mango",30,P],["Limonadă cu mentă",26,P]]],
 ["La pahar",[["Prosecco pahar",38,P],["Vin pahar",26,P]]]
 ];
-var O=["Antreu","Aperitive","Frigărui la grătar","Specialități","Gătite cu talent","Grătar","Prăjit (Tava)","Meniul zilei","Seafood Snacks (Prăjit)","Garnituri","Sosuri","Spaghete","Steak de Pește","Stridii","Supe","Tocănițe","Cocktail-uri","Bere Draught","Cafea și Băuturi Calde","Băuturi Alcoolice","Băuturi Non Alcoolice","Limonade și Fresh-uri","La pahar"];
+var O=["Antreu","Aperitive","Frigărui la grătar","Specialități","Gătite cu talent","Grătar","Pește la sare","Prăjit (Tava)","Meniul zilei","Seafood Snacks (Prăjit)","Garnituri","Sosuri","Spaghete","Stridii","Supe","Tocănițe","Cocktail-uri","Bere Draught","Cafea și Băuturi Calde","Băuturi Alcoolice","Băuturi Non Alcoolice","Limonade și Fresh-uri","La pahar"];
 D.sort(function(x,y){return O.indexOf(x[0])-O.indexOf(y[0]);});
 var h="";
 D.forEach(function(s){
@@ -79,7 +79,7 @@ h+='<section class="card boil"><h2>'+s[0]+'</h2><p class="note">Porumb, cartofi 
 s[2].forEach(function(n){h+='<li><span class="n">'+n[0]+'</span><span class="d"></span><span class="p">'+n[1]+' <small>lei / 100 g</small></span></li>';});
 h+="</ul></section>";return;}
 h+='<section class="card"><h2>'+s[0]+"</h2><ul>";
-s[1].forEach(function(i){h+='<li><span class="n">'+i[0]+'</span><span class="d"></span><span class="p">'+(i[1]?i[1]+" <small>lei"+(i[2]==="bucată"?" / bucată":"")+"</small>":"–")+"</span></li>";});
+s[1].forEach(function(i){h+='<li><span class="n">'+i[0]+'</span><span class="d"></span><span class="p">'+(i[1]?i[1]+" <small>lei"+(i[2]==="bucată"?" / bucată":i[2]==="100g"?" / 100 g":"")+"</small>":"–")+"</span></li>";});
 h+="</ul></section>";});
 document.getElementById("g").innerHTML=h;
 </script>
