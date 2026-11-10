@@ -52,10 +52,9 @@ var D=[
 ["Garnituri",[["Cartofi prăjiți",17,P],["Mămăligă",13,P],["Mix de salată",20,P],["Orez cu legume",23,P],["Orez simplu",19,P],["Pită",15,P]]],
 ["Specialități",[["Calamar Feta la grătar",75,P],["Calamar la grătar",65,P]]],
 ["Gătite cu talent",[["Creveți în sos de vin și usturoi",75,P],["Tigaie cu creveți și caracatiță",103,P],["Tigaie picantă",67,P],["Tigaie picantă cu creveți",75,P],["Tigaie picantă cu fructe de mare",77,P],["Tocăniță de Rapane cu sos roșu picant",68,P],["Tocăniță de Rapane unt și usturoi",68,P]]],
-["Grătar",[["Adana",68,P],["Amberjack la grătar",75,P],["Caracatiță la grătar",126,P],["Chefal la grătar",39,P],["Crap la grătar",99,P],["Doradă la grătar",45,P],["Grouper la grătar",90,P],["John Dory la grătar",120,P],["Lup de mare la grătar",45,P],["Macrou la grătar",20,P],["Pește-spadă la grătar",55,P],["Pisică de mare la grătar",45,P],["Rândunică de mare la grătar",75,P],["Sole la grătar",90,P],["Ton la grătar",55,P]]],
-["Prăjit (Tava)",[["Barbun",35,P],["Creveți sălbatici",85,P],["Hamsie",25,P],["Macrou",35,P],["Merluciu",35,P],["Pălămidă",35,P],["Sardine",30,P],["Stavrid",30,P]]],
-["Meniul zilei",[["Meniul zilei (storceag de sturion + caras prăjit + mămăliguță și muștar)",40,P]]],
-["Poke",[["Poke cu ton",45,P],["Poke cu John Dory",45,P]]],
+["Grătar",[["Adana",68,P],["Amberjack la grătar",75,P],["Caracatiță la grătar",126,P],["Chefal la grătar",39,P],["Crap la grătar",99,P],["Creveți sălbatici la grătar",85,P],["Doradă la grătar",45,P],["Grouper la grătar",90,P],["John Dory la grătar",120,P],["Lup de mare la grătar",45,P],["Macrou la grătar",20,P],["Pește-spadă la grătar",55,P],["Pisică de mare la grătar",45,P],["Rândunică de mare la grătar",75,P],["Sole la grătar",90,P],["Ton la grătar",55,P]]],
+["Prăjit (Tava)",[["Barbun",35,P],["Hamsie",25,P],["Macrou",35,P],["Merluciu",35,P],["Pălămidă",35,P],["Sardine",30,P],["Stavrid",30,P]]],
+["Meniul zilei",[["Meniul zilei (storceag de sturion + doradă/lup de mare prăjit + mămăliguță și muștar)",50,P]]],
 ["Seafood boil","boil",[["Tentacule de caracatiță",15],["Creveți",15],["Raci",15],["Scoici",15],["Rapane",15]]],
 ["Seafood Snacks (Prăjit)",[["Caras prăjit la porție",15,P],["Creveți pane",73,P],["Calamar pane pe pat de cartofi",71,P],["Creveți Crispy Panko pe pat de cartofi",75,P],["Fish & Chips",75,P],["Fritto misto",73,P]]],
 ["Sosuri",[["Mujdei de usturoi",11,P],["Sos aioli",11,P],["Sos picant Sriracha",11,P],["Sos special by Pescobar",11,P],["Sos Spicy Mayo",11,P],["Sos sweet chilli",11,P]]],
@@ -72,7 +71,7 @@ var D=[
 ["Limonade și Fresh-uri",[["Limonadă clasică",25,P],["Limonadă cu mango",30,P],["Limonadă cu mentă",26,P]]],
 ["La pahar",[["Prosecco pahar",38,P],["Vin pahar",26,P]]]
 ];
-var O=["Antreu","Aperitive","Frigărui la grătar","Specialități","Gătite cu talent","Grătar","Prăjit (Tava)","Meniul zilei","Poke","Seafood boil","Seafood Snacks (Prăjit)","Garnituri","Sosuri","Spaghete","Steak de Pește","Stridii","Supe","Tocănițe","Cocktail-uri","Bere Draught","Cafea și Băuturi Calde","Băuturi Alcoolice","Băuturi Non Alcoolice","Limonade și Fresh-uri","La pahar"];
+var O=["Antreu","Aperitive","Frigărui la grătar","Specialități","Gătite cu talent","Grătar","Prăjit (Tava)","Meniul zilei","Seafood boil","Seafood Snacks (Prăjit)","Garnituri","Sosuri","Spaghete","Steak de Pește","Stridii","Supe","Tocănițe","Cocktail-uri","Bere Draught","Cafea și Băuturi Calde","Băuturi Alcoolice","Băuturi Non Alcoolice","Limonade și Fresh-uri","La pahar"];
 D.sort(function(x,y){return O.indexOf(x[0])-O.indexOf(y[0]);});
 var h="";
 D.forEach(function(s){
