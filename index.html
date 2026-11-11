@@ -27,7 +27,8 @@ li .n{flex:0 1 auto}
 li .d{flex:1;border-bottom:1px dotted rgba(244,241,234,.28);transform:translateY(-3px);min-width:8px}
 li .p{color:var(--gold);font-weight:700;white-space:nowrap}
 li .p small{color:var(--muted);font-weight:400;font-size:.72rem}
-.boil li{padding:6px 0}
+li.ing .n{flex:1;overflow-wrap:anywhere}
+li.ing{padding:0 0 7px;font-size:.78rem;color:var(--muted);font-style:italic;line-height:1.3}
 footer{text-align:center;color:var(--muted);font-size:.68rem;letter-spacing:.14em;margin-top:20px;text-transform:uppercase}
 @media(min-width:700px){.grid{grid-template-columns:1fr 1fr;align-items:start}.frame{padding:36px 30px 26px}h1{font-size:3rem}}
 @media(min-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}li{font-size:.88rem}}
@@ -46,42 +47,33 @@ footer{text-align:center;color:var(--muted);font-size:.68rem;letter-spacing:.14e
 <script>
 var P="porție",K="kg";
 var D=[
-["Antreu",[["Lacherdă de pălămidă",25,P]]],
-["Aperitive",[["Icre de crap",35,P]]],
-["Frigărui la grătar",[["Frigăruie Amberjack (Ricciola)",75,P],["Frigăruie Creveți Sălbatici",60,P],["Frigăruie Grouper",75,P],["Frigăruie pălămidă",35,P],["Frigăruie Monkfish",69,P]]],
-["Garnituri",[["Cartofi prăjiți",17,P],["Mămăligă",13,P],["Mix de salată",20,P],["Orez cu legume",23,P],["Orez simplu",19,P],["Pită",15,P]]],
-["Specialități",[["Calamar Feta la grătar",75,P],["Calamar la grătar",65,P]]],
-["Gătite cu talent",[["Creveți în sos de vin și usturoi",75,P],["Tigaie cu creveți și caracatiță",103,P],["Tigaie picantă",67,P],["Tigaie picantă cu creveți",75,P],["Tigaie picantă cu fructe de mare",77,P],["Tocăniță de Rapane cu sos roșu picant",68,P],["Tocăniță de Rapane unt și usturoi",68,P]]],
-["Grătar",[["Amberjack la grătar",75,P],["Caracatiță la grătar",126,P],["Chefal la grătar",39,P],["Crap la grătar",99,P],["Creveți sălbatici la grătar",85,P],["Doradă la grătar",45,P],["Grouper la grătar",90,P],["John Dory la grătar",120,P],["Lup de mare la grătar",45,P],["Lufar la grătar",85,"bucată"],["Macrou la grătar",20,P],["Pește-spadă la grătar",55,P],["Rândunică de mare la grătar",75,P],["Sole la grătar",90,P],["Ton la grătar",55,P]]],
-["Pește la sare",[["Doradă la sare",75,P],["Lup de mare la sare",75,P],["Doradă sălbatică",20,"100g"]]],
-["Prăjit (Tava)",[["Barbun",35,P],["Hamsie",25,P],["Lufar mic",40,P],["Macrou",35,P],["Merluciu",35,P],["Pălămidă",35,P],["Sardine",30,P],["Stavrid",30,P]]],
-["Meniul zilei",[["Meniul zilei (storceag de sturion + doradă/lup de mare prăjit + mămăliguță și mujdei)",50,P]]],
-["Seafood Snacks (Prăjit)",[["Caras prăjit la porție",15,P],["Creveți pane",73,P],["Calamar pane pe pat de cartofi",71,P],["Creveți Crispy Panko pe pat de cartofi",75,P],["Fish & Chips",75,P],["Fritto misto",73,P]]],
-["Sosuri",[["Mujdei de usturoi",11,P],["Sos aioli",11,P],["Sos picant Sriracha",11,P],["Sos special by Pescobar",11,P],["Sos Spicy Mayo",11,P],["Sos sweet chilli",11,P]]],
-["Spaghete",[["Spaghetti cu caracatiță",74,P],["Spaghetti cu creveți",74,P],["Spaghetti cu fructe de mare",76,P],["Spaghetti cu homar",120,P]]],
-["Stridii",[["Stridie",25,"bucată"],["Stridii Regale - 12 buc",260,P],["Stridii Regale - 6 buc",130,P]]],
-["Supe",[["Storceag de sturion",25,P]]],
-["Tocănițe",[["Tocană ghiveci de pălămidă",45,P]]],
+["Aperitive", [["Lacherda de palamida", 25, "80 gr", "Palamida marinata,ceapa rosie,sumac,ulei de masline", ""], ["Icre de crap", 35, "140 gr", "Icre de crap,ulei,apa minerala,suc lamaie,lamaie,ceapa rosie,patrunjel", ""], ["Icre de stiuca", "", "140 gr", "Icre de stiuca,ulei,apa minerala,suc lamaie,lamaie,ceapa rosie,patrunjel", ""], ["Tocanita ghiveci de palamida", 45, "260 gr", "Palamida,ceapa alba,ardei gras,unt,ulei,stoc peste", ""]]],
+["Stridii", [["Stridii regale “La Famille Boutrais”", 25, "", "", "buc"], ["Stridii regale “La Famille Boutrais” 6 buc", 130, "", "", ""], ["Stridii regale “La Famille Boutrais” 12 buc", 260, "", "", ""]]],
+["Supa", [["Storceag de sturion", 25, "320 gr", "Stoc de peste,sturion,cartofi,morcovi,ceapa,otet,galbenus de ou,smantana", ""]]],
+["Calamar", [["Calamar feta", 75, "270 gr", "Calamar,feta,ulei aromatizat,chives,lamaie", ""], ["Calamar", 65, "180 gr", "Calamar,ulei aromatizat,chives,lamaie", ""], ["Calamar cu creveti", "", "270 gr", "Calamar,creveti,ulei aromatizat,chives,lamaie", ""]]],
+["Gatite cu talent", [["Creveti in sos de vin si usturoi", "", "285 gr", "Creveti, Vin alb, Unt, Ulei, Usturoi,chives,lamaie", ""], ["Tigaie cu creveti si caracatita", "", "275 gr", "Creveti, Caracatita, Ulei, Usturoi, Boia dulce,chives,lamaie", ""], ["Tigaie picanta creveti", "", "350 gr", "Creveti, Sos de rosii, Vin alb, Ulei, Unt, Usturoi,chives,lamaie", ""], ["Tigaie picanta fructe de mare", "", "370 gr", "Scoici, Sos de rosii, Creveti, Carne scoici, Calamar, Caracatita, Vin, Ulei, Usturoi, Fulgi Chili,chives,lamaie", ""], ["Tocanita de rapane cu sos picant", "", "320 gr", "Rapane, Stoc de peste, Vin alb, Unt, Ulei, Usturoi, Boia dulce, Patrunjel, Fulgi chili,chives,lamaie", ""], ["Tocanita cu rapane unt si usturoi", "", "320 gr", "Rapane, Stoc de peste, Vin alb, Unt, Ulei, Usturoi, Marar,chives,lamaie", ""], ["Scoici in sos de vin alb", "", "520 gr", "Scoici, Carne Scoici, Vin alb, Sos Vegetal, Ulei, Usturoi, Fulgi chilli,chives,lamaie", ""]]],
+["Gratar", [["Amberjack/Ricciola", 75, "250 gr", "", ""], ["Chefal", 49, "300 gr", "", ""], ["Crap marinat", 99, "1000 gr", "", ""], ["Creveti blacktiger", 85, "350 gr", "", ""], ["Dorada", 55, "350 gr", "", ""], ["Lup de mare", 55, "350 gr", "", ""], ["Grouper intreg FAO34", 90, "350 gr", "", ""], ["John Dory FAO34", 120, "400 gr", "", ""], ["Lufar", 95, "500 gr", "", ""], ["Randunica de mare FAO34", 75, "300 gr", "", ""], ["Sole FAO34", 90, "300 gr", "", ""], ["Caracatita FAO34", 30, "", "", "100 gr"], ["Peste spada", 25, "", "", "100 gr"], ["Ton", 25, "", "", "100 gr"], ["Homar spinos FAO34", 53, "", "", "100 gr"], ["Homar canadian", 30, "", "", "100 gr"], ["Homar albastru", 50, "", "", "100 gr"]]],
+["Peste la sare", [["Dorada", 75, "350 gr", "", ""], ["Lup de mare", 75, "350 gr", "", ""], ["Dorada salbatica", 23, "", "", "100 gr"]]],
+["Prajit tava", [["Hamsie", 25, "150 gr", "Hamsie,malai,faina", ""], ["Lufar mic", 40, "170 gr", "Lufar,malai,faina", ""], ["Merluciu", 35, "170 gr", "Merluciu,malai,faina", ""], ["Palamida", 35, "220 gr", "Palamida,malai,faina", ""], ["Sardine", 30, "120 gr", "Sardine,malai,faina", ""], ["Stavrid", 30, "140 gr", "Stavrid,faina,malai", ""], ["Barbun", 35, "170 gr", "Barbun,malai,faina", ""]]],
+["Spaghete", [["Spaghete cu caracatita", 74, "350 gr", "", ""], ["Spaghete cu creveti", 74, "350 gr", "", ""], ["Spaghete cu fructe de mare", 76, "370 gr", "", ""], ["Spaghete cu homar", 120, "400 gr", "", ""]]],
+["Seafood prajit", [["Caras", 15, "220 gr", "Caras,faina", ""], ["Creveti pane", 73, "400 gr", "Creveti,faina,lapte,sos aioli,lamaie", ""], ["Calamar cu cartofi prajiti", 71, "450 gr", "Calamar,faina,lapte,cartofi prajiti,sos aioli,lamaie", ""], ["Creveti crispy panko cu cartofi prajiti", 75, "450 gr", "Creveti,panko,faina,lapte,cartofi prajiti,sos aioli,lamaie", ""], ["Fritto misto", 73, "450 gr", "Creveti,calamari,carne scoica,faina,lapte,sos aioli,lamaie", ""]]],
+["Sides", [["Cartofi prajiti", 17, "160 gr", "", ""], ["Mamaliga", 13, "190 gr", "", ""], ["Mix salata", 20, "70 gr", "", ""], ["Orez cu legume", 23, "210 gr", "", ""], ["Orez simplu", 19, "190 gr", "", ""], ["Pita", 15, "60 gr", "", ""]]],
 ["Cocktail-uri",[["Aperol Spritz",41,P],["Classic Gin & Tonic",41,P],["Hugo",41,P],["Mojito",41,P],["Pornstar Martini",44,P]]],
 ["Cafea și Băuturi Calde",[["Caffe Latte",19,P],["Cappuccino",16,P],["Ceai cald",19,P],["Espresso lung",16,P],["Espresso scurt",16,P]]],
 ["Băuturi Alcoolice",[["Chivas Regal 12YO 50ml",32,P],["Havana Club 3YO 50ml",26,P],["Jameson 50ml",29,P],["Martell VS 50ml",36,P],["Pălincă de cireșe Zetea 50ml",44,P],["Pălincă de gutui",44,P],["Ramazzotti Amaro 50ml",26,P],["The Glenlivet 12YO 50ml",39,P],["Țuică de prune Zetea 50ml",29,P],["Vodka Absolut 50ml",26,P]]],
 ["Băuturi Non Alcoolice",[["Apă plată Aqua Carpatica 750 ml",19,P],["Apă minerală Aqua Carpatica 750 ml",19,P],["Apă plată Aqua Carpatica 330 ml",15,P],["Apă minerală Aqua Carpatica 330 ml",15,P],["Aqua Carpatica Flavours 330 ml",15,P],["Fi-Ga 250 ml",25,P],["Fi-Ga Light 250 ml",25,P]]],
 ["Limonade și Fresh-uri",[["Limonadă clasică",25,P],["Limonadă cu mango",30,P],["Limonadă cu mentă",26,P]]],
-["La pahar",[["Prosecco pahar",38,P],["Vin pahar",26,P]]]
+["La pahar",[["Panciu Riserva spumant",38,"","","pahar"],["Panciu alb/rose",26,"","","pahar"]]]
 ];
-var O=["Antreu","Aperitive","Frigărui la grătar","Specialități","Gătite cu talent","Grătar","Pește la sare","Prăjit (Tava)","Meniul zilei","Seafood Snacks (Prăjit)","Garnituri","Sosuri","Spaghete","Stridii","Supe","Tocănițe","Cocktail-uri","Cafea și Băuturi Calde","Băuturi Alcoolice","Băuturi Non Alcoolice","Limonade și Fresh-uri","La pahar"];
+var O=["Aperitive", "Stridii", "Supa", "Calamar", "Gatite cu talent", "Gratar", "Peste la sare", "Prajit tava", "Spaghete", "Seafood prajit", "Sides", "Cocktail-uri", "Cafea și Băuturi Calde", "Băuturi Alcoolice", "Băuturi Non Alcoolice", "Limonade și Fresh-uri", "La pahar"];
 D.sort(function(x,y){return O.indexOf(x[0])-O.indexOf(y[0]);});
+function R(i){var q=i[2]===P?"":i[2],r="";if(i[1]!=="")r+=i[1]+" <small>lei"+(i[4]?" / "+i[4]:"")+"</small>";if(q)r+=(r?" ":"")+"<small>"+(r?"• ":"")+q+"</small>";return r||"–";}
 var h="";
 D.forEach(function(s){
-if(s[1]==="boil"){
-h+='<section class="card boil"><h2>'+s[0]+'</h2><p class="note">Porumb, cartofi și ou incluse</p><p class="pick">Seafood boil — 20 lei</p><ul>';
-s[2].forEach(function(n){h+='<li><span class="n">'+n[0]+'</span><span class="d"></span><span class="p">'+n[1]+' <small>lei / 100 g</small></span></li>';});
-h+="</ul></section>";return;}
 h+='<section class="card"><h2>'+s[0]+"</h2><ul>";
-s[1].forEach(function(i){h+='<li><span class="n">'+i[0]+'</span><span class="d"></span><span class="p">'+(i[1]?i[1]+" <small>lei"+(i[2]==="bucată"?" / bucată":i[2]==="100g"?" / 100 g":"")+"</small>":"–")+"</span></li>";});
+s[1].forEach(function(i){h+='<li><span class="n">'+i[0]+'</span><span class="d"></span><span class="p">'+R(i)+"</span></li>";if(i[3])h+='<li class="ing"><span class="n">'+i[3]+"</span></li>";});
 h+="</ul></section>";});
 document.getElementById("g").innerHTML=h;
 </script>
 </body>
 </html>
-
